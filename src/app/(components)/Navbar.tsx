@@ -12,8 +12,8 @@ import {
 } from "react-icons/fa";
 
 const Navbar = async () => {
-  //const session = await getServerSession(options);
-  const session = getServerSession(options);
+  const session = await getServerSession(options);
+  //const session = getServerSession(options);
   //const session = "ok";
 
   return (
@@ -56,10 +56,12 @@ const Navbar = async () => {
           </Link>
         )}
 
+        {}
+
         {/* Add a button to toggle the menu on small devices */}
 
         {/* Add a class to control visibility of menu on larger screens */}
-        {session ? <Usermenu /> : <Link href="/api/auth/signin">login</Link>}
+        <Usermenu />
       </div>
     </nav>
   );

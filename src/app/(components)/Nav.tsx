@@ -13,14 +13,14 @@ const Nav = async () => {
           <Link href="/">
             <FaHome size={25} />
           </Link>
-          <Link href="/">Admin</Link>
-          <Link href="/">Premium</Link>
-          <Link href="/">Free</Link>
-          <Link href="/">Public</Link>
+          <Link href="/CreateUser">Create User</Link>
+          <Link href="/ClientMember">Client Member</Link>
+          <Link href="/Member">Member</Link>
+          <Link href="/Public">Public</Link>
           {session ? (
             <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
           ) : (
-            <Link href="/api/auth/signin">login</Link>
+            <Link href="/api/auth/signin">Login</Link>
           )}
         </div>
       </nav>

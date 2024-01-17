@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AuthContextProvider } from "./contexts/AuthContext";
+import AuthProvider from "./(components)/AuthProvider";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 import Nav from "./(components)/Nav";
+import Providers from "./(components)/Providers";
+import Appbar from "./(components)/Appbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +23,9 @@ export default function RootLayout({
   const styles = `flex flex-col h-screen justify-between`;
   return (
     <html lang="en">
-      <AuthContextProvider>
+      <Providers>
         <body className={inter.className + " " + styles}>
-          <header className="h-10 mb-16">
+          <header className="h-10 mb-10">
             <Navbar />
           </header>
           <main className="mb-auto h-auto">{children}</main>
@@ -31,7 +33,7 @@ export default function RootLayout({
             <Footer />
           </footer>
         </body>
-      </AuthContextProvider>
+      </Providers>
     </html>
   );
 }

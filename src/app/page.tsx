@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+import Posts from "./(components)/Posts";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -7,11 +8,11 @@ export default function Home() {
   return (
     <main className="">
       <section id="top" className="bg-cyan-200 h-7 mb-3 w-full text-wrap">
-        Welcome {session?.user?.name}, Role: {session?.user?.role}
+        Welcome {session?.user?.name}
       </section>
 
       <section id="middle" className="bg-green-700 h-screen">
-        <div className="w-1/2">body {JSON.stringify(session)}</div>
+        <Posts />
       </section>
 
       <section id="bottom">bottom</section>

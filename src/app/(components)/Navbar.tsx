@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
-import { Usermenu } from "@/app/(components)/usermenu";
+import { Usermenu } from "./usermenu";
 import {
   FaAddressCard,
   FaBell,
